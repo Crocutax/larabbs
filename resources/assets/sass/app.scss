@@ -6,7 +6,7 @@
 @import "variables";
 
 // Bootstrap
-//@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
 
 
@@ -41,5 +41,14 @@ body {
         color: inherit;
       }
     }
+  }
+}
+
+/* User register page */
+.register-page {
+  img.captcha {
+    margin-bottom: 0px;
+    margin-top: 10px;
+    cursor: pointer;
   }
 }
