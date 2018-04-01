@@ -32,6 +32,11 @@ class User extends Authenticatable
         return $this->hasMany(Topic::class);
     }
 
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
+    }
+
     /**
      * 是否为本人
      * @param $model
