@@ -54,7 +54,7 @@ class User extends Authenticatable
     {
         $this->notification_count = 0;
         $this->save();
-        //????下面这句什么鬼?
+        //未读消息,来自Notifiable的unreadNotifications()方法
         $this->unreadNotifications->markAsRead();
     }
 
