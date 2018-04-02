@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'PagesController@root')->name('root');
+Route::get('/', 'TopicsController@index')->name('root');
 
 
 //------------以下内容为make:auth 自动生成的路由,可以用Auth::routes(); 一行替代-------------
