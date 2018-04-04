@@ -26,7 +26,7 @@ class VerificationCodesController extends Controller
 
         $phone = $captchaData['phone'];
 
-        if (!app()->environment('production')) {
+        if (env('APP_ENV')=='local') { //!app()->environment('production')
             $code = '1234';
         } else {
             // 生成4位随机数，左侧补0
