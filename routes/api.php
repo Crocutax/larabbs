@@ -54,6 +54,8 @@ $api->version('v1', [
 
         });
 
+        //------------------------- 游客可以访问的接口 -------------------------
+
         // 短信验证码
         $api->post('verificationCodes', 'VerificationCodesController@store')
             ->name('api.verificationCodes.store');
@@ -80,9 +82,17 @@ $api->version('v1', [
         $api->delete('authorizations/current', 'AuthorizationsController@destroy')
             ->name('api.authorizations.destroy');
 
-        // 游客可以访问的接口
+        //分类列表
         $api->get('categories', 'CategoriesController@index')
             ->name('api.categories.index');
+
+        //话题列表
+        $api->get('topics', 'TopicsController@index')
+            ->name('api.topics.index');
+
+        //用户发布的话题列表
+        $api->get('users/{user}/topics', 'TopicsController@userIndex')
+            ->name('api.users.topics.index');
 
     });
 
