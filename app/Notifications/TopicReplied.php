@@ -8,9 +8,9 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class TopicReplied extends Notification implements ShouldQueue
+class TopicReplied extends Notification //implements ShouldQueue
 {
-    use Queueable;
+   // use Queueable;
 
     public function __construct(Reply $reply)
     {
@@ -18,18 +18,17 @@ class TopicReplied extends Notification implements ShouldQueue
         $this->reply = $reply;
     }
 
-//    public function via($notifiable)
-//    {
-//        // 开启通知的频道
-//        return ['database'];
-//    }
-
     public function via($notifiable)
     {
         // 开启通知的频道
         return ['database'];
-        // return ['database', 'mail'];
     }
+
+//    public function via($notifiable)
+//    {
+//        // 开启通知的频道
+//         return ['database', 'mail'];
+//    }
 
     public function toDatabase($notifiable)
     {
