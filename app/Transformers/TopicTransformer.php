@@ -2,6 +2,7 @@
 
 namespace App\Transformers;
 
+use App\Models\Reply;
 use App\Models\Topic;
 use League\Fractal\TransformerAbstract;
 
@@ -35,5 +36,10 @@ class TopicTransformer extends TransformerAbstract
     public function includeCategory(Topic $topic)
     {
         return $this->item($topic->category, new CategoryTransformer());
+    }
+
+    public function includeTopic(Reply $reply)
+    {
+        return $this->item($reply->topic, new TopicTransformer());
     }
 }
