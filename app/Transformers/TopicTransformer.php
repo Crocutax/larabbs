@@ -42,5 +42,5 @@ class TopicTransformer extends TransformerAbstract
     {
         return $this->item($reply->topic, new TopicTransformer());
     }
-    
+
 }

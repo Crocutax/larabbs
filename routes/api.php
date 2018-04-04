@@ -130,6 +130,10 @@ $api->version('v1', [
         $api->get('users/{user}/replies', 'RepliesController@userIndex')
             ->name('api.users.replies.index');
 
+        // 资源推荐
+        $api->get('links', 'LinksController@index')
+            ->name('api.links.index');
+
     });
 
 
