@@ -40,6 +40,10 @@ $api->version('v1', [
             $api->patch('user', 'UsersController@update')
                 ->name('api.user.update');
 
+            // 发布话题
+            $api->post('topics', 'TopicsController@store')
+                ->name('api.topics.store');
+
         });
 
         // 短信验证码
